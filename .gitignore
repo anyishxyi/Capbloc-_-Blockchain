@@ -1,0 +1,15 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+node_modules/*
+!node_modules/app
+.DS_Store
+routes/.DS_Store
+package-lock.json
+error.log
+combined.log
+info.log
+.env
+.idea/
+coverage/
+.ssl/*
