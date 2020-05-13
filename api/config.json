@@ -1,0 +1,401 @@
+{
+    "development": {
+        "ABI": [
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "first_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "last_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "address_person",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "action",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "name_society",
+						"type": "string"
+					}
+				],
+				"name": "add_associe",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "person",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "guarenties",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "name_society",
+						"type": "string"
+					}
+				],
+				"name": "create_nantises",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "capital",
+						"type": "uint256"
+					}
+				],
+				"name": "create_society",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name_society",
+						"type": "string"
+					}
+				],
+				"name": "del_all_associe",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "person",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "guarenties",
+						"type": "string"
+					}
+				],
+				"name": "updaate_nantises",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name_society",
+						"type": "string"
+					}
+				],
+				"name": "get_all_associeted",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "last_name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "first_name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "address_person",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "action",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum Registry.associeted_type",
+								"name": "types",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "email",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Registry.associeted[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "name_society",
+						"type": "string"
+					}
+				],
+				"name": "get_associe",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "person",
+						"type": "string"
+					}
+				],
+				"name": "get_nantises",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "person",
+						"type": "string"
+					}
+				],
+				"name": "get_nantises_length",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "get_society",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "last_name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "first_name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "address_person",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "action",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum Registry.associeted_type",
+								"name": "types",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "email",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Registry.associeted[]",
+						"name": "",
+						"type": "tuple[]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string[]",
+								"name": "person",
+								"type": "string[]"
+							},
+							{
+								"internalType": "string[]",
+								"name": "guarenties",
+								"type": "string[]"
+							},
+							{
+								"internalType": "uint256[]",
+								"name": "id",
+								"type": "uint256[]"
+							}
+						],
+						"internalType": "struct Registry.nantises[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+        "hash": "0xD2f427b91C8F1D1B92Ea20eA49db9757E86dBbB9"
+    }
+}
