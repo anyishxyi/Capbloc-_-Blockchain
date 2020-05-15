@@ -2,8 +2,62 @@
     "development": {
         "ABI": [
 			{
-				"constant": false,
+				"anonymous": false,
 				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
 					{
 						"internalType": "string",
 						"name": "first_name",
@@ -21,7 +75,7 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "action",
+						"name": "part",
 						"type": "uint256"
 					},
 					{
@@ -37,30 +91,23 @@
 				],
 				"name": "add_associe",
 				"outputs": [],
-				"payable": false,
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"constant": false,
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "person",
-						"type": "string"
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
 					},
 					{
-						"internalType": "string",
-						"name": "guarenties",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "name_society",
-						"type": "string"
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
 					}
 				],
-				"name": "create_nantises",
+				"name": "approve",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -68,12 +115,10 @@
 						"type": "bool"
 					}
 				],
-				"payable": false,
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"constant": false,
 				"inputs": [
 					{
 						"internalType": "string",
@@ -84,16 +129,53 @@
 						"internalType": "uint256",
 						"name": "capital",
 						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "last_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "first_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "address_person",
+						"type": "string"
 					}
 				],
 				"name": "create_society",
 				"outputs": [],
-				"payable": false,
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "subtractedValue",
+						"type": "uint256"
+					}
+				],
+				"name": "decreaseAllowance",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -103,30 +185,89 @@
 				],
 				"name": "del_all_associe",
 				"outputs": [],
-				"payable": false,
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"constant": false,
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "token_recev",
+						"type": "address"
+					},
+					{
 						"internalType": "uint256",
-						"name": "id",
+						"name": "part_recev",
 						"type": "uint256"
 					},
 					{
 						"internalType": "string",
-						"name": "person",
+						"name": "name_society",
+						"type": "string"
+					}
+				],
+				"name": "give_to",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token_recev",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "first_name_recev",
 						"type": "string"
 					},
 					{
 						"internalType": "string",
-						"name": "guarenties",
+						"name": "last_name_recev",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "address_person_recev",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "part_recev",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "email_recev",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "name_society",
 						"type": "string"
 					}
 				],
-				"name": "updaate_nantises",
+				"name": "give_to_new_member",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "addedValue",
+						"type": "uint256"
+					}
+				],
+				"name": "increaseAllowance",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -134,18 +275,147 @@
 						"type": "bool"
 					}
 				],
-				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokens",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name_society",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "part",
+						"type": "uint256"
+					}
+				],
+				"name": "set_part",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"payable": false,
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
 			{
-				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -163,6 +433,11 @@
 								"type": "uint256"
 							},
 							{
+								"internalType": "address",
+								"name": "token",
+								"type": "address"
+							},
+							{
 								"internalType": "string",
 								"name": "last_name",
 								"type": "string"
@@ -179,13 +454,8 @@
 							},
 							{
 								"internalType": "uint256",
-								"name": "action",
+								"name": "part",
 								"type": "uint256"
-							},
-							{
-								"internalType": "enum Registry.associeted_type",
-								"name": "types",
-								"type": "uint8"
 							},
 							{
 								"internalType": "string",
@@ -194,21 +464,19 @@
 							}
 						],
 						"internalType": "struct Registry.associeted[]",
-						"name": "",
+						"name": "associet",
 						"type": "tuple[]"
 					}
 				],
-				"payable": false,
 				"stateMutability": "view",
 				"type": "function"
 			},
 			{
-				"constant": true,
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "email",
-						"type": "string"
+						"internalType": "address",
+						"name": "tokens",
+						"type": "address"
 					},
 					{
 						"internalType": "string",
@@ -220,88 +488,82 @@
 				"outputs": [
 					{
 						"internalType": "string",
-						"name": "",
+						"name": "first_name",
 						"type": "string"
 					},
 					{
 						"internalType": "string",
-						"name": "",
+						"name": "last_name",
 						"type": "string"
 					},
 					{
 						"internalType": "string",
-						"name": "",
+						"name": "address_person",
 						"type": "string"
 					},
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "part",
 						"type": "uint256"
 					},
 					{
 						"internalType": "string",
-						"name": "",
+						"name": "emails",
 						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
 					}
 				],
-				"payable": false,
 				"stateMutability": "view",
 				"type": "function"
 			},
 			{
-				"constant": true,
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "person",
+						"name": "name_society",
 						"type": "string"
 					}
 				],
-				"name": "get_nantises",
-				"outputs": [
-					{
-						"internalType": "string[]",
-						"name": "",
-						"type": "string[]"
-					},
-					{
-						"internalType": "string[]",
-						"name": "",
-						"type": "string[]"
-					},
-					{
-						"internalType": "uint256[]",
-						"name": "",
-						"type": "uint256[]"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "person",
-						"type": "string"
-					}
-				],
-				"name": "get_nantises_length",
+				"name": "get_capital",
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "capital",
 						"type": "uint256"
 					}
 				],
-				"payable": false,
 				"stateMutability": "view",
 				"type": "function"
 			},
 			{
-				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokens",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name_society",
+						"type": "string"
+					}
+				],
+				"name": "get_part",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "part",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -313,17 +575,12 @@
 				"outputs": [
 					{
 						"internalType": "string",
-						"name": "",
+						"name": "name_of_society",
 						"type": "string"
 					},
 					{
 						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
+						"name": "capital_of_society",
 						"type": "uint256"
 					},
 					{
@@ -332,6 +589,11 @@
 								"internalType": "uint256",
 								"name": "id",
 								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "token",
+								"type": "address"
 							},
 							{
 								"internalType": "string",
@@ -350,13 +612,8 @@
 							},
 							{
 								"internalType": "uint256",
-								"name": "action",
+								"name": "part",
 								"type": "uint256"
-							},
-							{
-								"internalType": "enum Registry.associeted_type",
-								"name": "types",
-								"type": "uint8"
 							},
 							{
 								"internalType": "string",
@@ -365,37 +622,77 @@
 							}
 						],
 						"internalType": "struct Registry.associeted[]",
-						"name": "",
-						"type": "tuple[]"
-					},
-					{
-						"components": [
-							{
-								"internalType": "string[]",
-								"name": "person",
-								"type": "string[]"
-							},
-							{
-								"internalType": "string[]",
-								"name": "guarenties",
-								"type": "string[]"
-							},
-							{
-								"internalType": "uint256[]",
-								"name": "id",
-								"type": "uint256[]"
-							}
-						],
-						"internalType": "struct Registry.nantises[]",
-						"name": "",
+						"name": "associet_of_society",
 						"type": "tuple[]"
 					}
 				],
-				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokens",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name_society",
+						"type": "string"
+					}
+				],
+				"name": "get_token",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
 				"stateMutability": "view",
 				"type": "function"
 			}
 		],
-        "hash": "0xD2f427b91C8F1D1B92Ea20eA49db9757E86dBbB9"
+        "hash": "0x9186C2487FDAaDee08e605B2f282aCF39A5b64AA"
     }
 }

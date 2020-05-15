@@ -78,7 +78,11 @@ contract Registry is ERC20 {
     function get_society(string memory name)
         public
         view
-        returns (string memory, uint256, associeted[] memory)
+        returns (
+            string memory name_of_society,
+            uint256 capital_of_society,
+            associeted[] memory associet_of_society
+        )
     {
         uint256 max_length = get_all_associeted(name).length;
         societies storage _societies = society[name];
@@ -92,7 +96,7 @@ contract Registry is ERC20 {
     function get_all_associeted(string memory name_society)
         public
         view
-        returns (associeted[] memory)
+        returns (associeted[] memory associet)
     {
         societies storage _societies = society[name_society];
         return _societies.associeted_member;
@@ -280,7 +284,6 @@ contract Registry is ERC20 {
         string memory name_society
     ) public {
         uint256 _actual_balance = balanceOf(msg.sender);
-
         uint256 amount = (_actual_balance * part_recev) / 100;
         transfer(token_recev, amount);
         set_part(token_recev, name_society, part_recev);
