@@ -2,9 +2,9 @@ import { contract, web3 } from "../../repository/connection";
 import { generiqueReturn } from "../../interfaces/serialize/index";
 import { badRequestError } from "../../interfaces/errors";
 
-const get_society = async (req, res) => {
+const balanceOf = async (req, res) => {
     try {
-        const society = await contract.methods.get_society(req.query.name_society).call();
+        const society = await contract.methods.balanceOf(req.query.account).call();
         res.status(200).json(generiqueReturn({ data: society, status: res.statusCode }));
     } catch (error) {
         res.status(400).json(badRequestError(error.toString()))
@@ -12,4 +12,4 @@ const get_society = async (req, res) => {
     }
 }
 
-export default get_society;
+export default balanceOf;
