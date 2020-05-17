@@ -14,6 +14,7 @@ const router = express.Router();
 router.get('/', test);
 router.get('/society', get_society);
 router.get('/balanceOf', balanceOf);
+router.get('/getToken', getToken);
 
 router.post('/create_society', create_society);
 router.post('/addAssociate', addAssociate);
