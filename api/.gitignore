@@ -1,8 +1,7 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
-node_modules/*
-!node_modules/app
+node_modules
 .DS_Store
 routes/.DS_Store
 package-lock.json
