@@ -4,14 +4,20 @@ import {
     test,
     create_society,
     get_society,
-    balanceOf
+    balanceOf,
+    addAssociate,
+    giveTo
 } from '../controllers/smartContract';
 
 const router = express.Router();
 
 router.get('/', test);
-router.post('/create_society', create_society);
 router.get('/society', get_society);
 router.get('/balanceOf', balanceOf);
+
+router.post('/create_society', create_society);
+router.post('/addAssociate', addAssociate);
+router.post('/giveTo', giveTo);
+
 
 export default router;
